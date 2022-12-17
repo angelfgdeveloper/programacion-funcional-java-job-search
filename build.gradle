@@ -17,12 +17,12 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/com.beust/jcommander
+    // https://mvnrepository.com/artifact/com.beust/jcommander => Transformar lo que recibe por terminal a objetos
     compile group: 'com.beust', name: 'jcommander', version: '1.78'
 
-    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-core => Peticiones web por nosotros a las apis
     compile group: 'io.github.openfeign', name: 'feign-core', version: '10.7.0'
 
-    // https://mvnrepository.com/artifact/io.github.openfeign/feign-gson
+    // https://mvnrepository.com/artifact/io.github.openfeign/feign-gson => Nos regresa un resultado en gson
     compile group: 'io.github.openfeign', name: 'feign-gson', version: '10.7.0'
 }
