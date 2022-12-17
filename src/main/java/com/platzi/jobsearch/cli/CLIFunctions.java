@@ -4,6 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class CLIFunctions {
+
+    /**
+     * Argumentos que tomara para verificar lo que escriba el cliente en la terminal (Consultas)
+     * **/
     public static Map<String, Object> toMap(CLIArguments cliArguments){
         Map<String, Object> params = new HashMap<>();
 

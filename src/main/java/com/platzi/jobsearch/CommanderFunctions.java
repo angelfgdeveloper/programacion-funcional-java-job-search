@@ -13,26 +13,26 @@ public class CommanderFunctions {
             String cliName, Supplier<T> argumentSupplier
     ) {
         JCommander jCommander = JCommander.newBuilder()
-                .addObject(argumentSupplier.get())
+                .addObject(argumentSupplier.get()) // Add argumentos para mostrar el menu
                 .build();
 
         jCommander.setProgramName(cliName);
         return jCommander;
     }
 
+    // Transformar los argumentos que regrese un Optional
     static Optional<List<Object>> parseArguments(
             JCommander jCommander,
-            String[] arguments,
+            String[] arguments, // argumentos que se pasara
             Consumer<JCommander> onError
     ) {
         try {
             jCommander.parse(arguments);
-
-            return Optional.of(jCommander.getObjects());
+            return Optional.of(jCommander.getObjects()); // retornar un objeto
         } catch (ParameterException paramEx){
-            onError.accept(jCommander);
+            onError.accept(jCommander); // obtener la exception
         }
 
-        return Optional.empty();
+        return Optional.empty(); // Sino retornar vacio
     }
 }
