@@ -10,7 +10,7 @@ public class CLIArguments {
     @Parameter(
             required = true,
             descriptionKey = "KEYWORD",
-            validateWith = CLIKeywordValidator.class,
+            validateWith = CLIKeywordValidator.class, // Validar que este correctamente los comandos
             description = "KEYWORD"
     )
     private String keyword;
@@ -42,7 +42,7 @@ public class CLIArguments {
     @Parameter(
             names = "--help",
             help = true,
-            validateWith = CLIHelpValidator.class,
+            validateWith = CLIHelpValidator.class, // Revisa lo que tiene que hacer el validator
             description = "Mostrar esta ayuda"
     )
     private boolean isHelp;
