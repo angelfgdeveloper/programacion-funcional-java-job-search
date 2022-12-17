@@ -3,20 +3,18 @@ package com.platzi.jobsearch.cli;
 import com.beust.jcommander.Parameter;
 
 public class CLIArguments {
-    CLIArguments(){
+    CLIArguments() { }
 
-    }
-
-    @Parameter(
-            required = true,
-            descriptionKey = "KEYWORD",
-            description = "KEYWORD"
+    @Parameter( // Esta propiedad es un parametro que se puede ingresar por terminal
+            required = true, // Es requerido
+            descriptionKey = "KEYWORD", // La ayuda
+            description = "KEYWORD" // Descripcion
     )
     private String keyword;
 
     @Parameter(
-            names = {"--location", "-l"},
-            description = "Cada busqueda puede incluir una ubicacion"
+            names = {"--location", "-l"}, // Nombres con los cuales podemos ingresar
+            description = "Cada busqueda puede incluir una ubicacion" // Descripcion
     )
     private String location;
 
@@ -27,24 +25,25 @@ public class CLIArguments {
     private int page = 0;
 
     @Parameter(
-            names = {"--full-time"},
+            names = {"--full-time"}, // Varios datos para ingresar
             description = "Agrega si queremos trabajos de tiempo completo"
     )
     private boolean isFullTime = false;
 
     @Parameter(
-            names = "--markdown",
+            names = "--markdown", // Un solo parametro para ingresar
             description = "Obtener los resultados en markdown"
     )
     private boolean isMarkdown = false;
 
     @Parameter(
             names = "--help",
-            help = true,
+            help = true, // notacion para especificar que es la ayuda
             description = "Mostrar esta ayuda"
     )
     private boolean isHelp;
 
+    // Solo Getters => para que los datos sean inmutables
     public String getKeyword() {
         return keyword;
     }
@@ -81,6 +80,8 @@ public class CLIArguments {
                 '}';
     }
 
+    // Devuelve una instancia de esta clase CLIArguments
+    // Es para cambiar a nuevas instancias
     public static CLIArguments newInstance() {
         return new CLIArguments();
     }

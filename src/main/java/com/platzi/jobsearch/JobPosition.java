@@ -99,6 +99,7 @@ public class JobPosition {
         this.companyLogo = companyLogo;
     }
 
+    // equals & hashCode => funcionan para comparar objetos
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -121,6 +122,7 @@ public class JobPosition {
         return Objects.hash(id, type, url, createdAt, company, companyUrl, title, location, description, companyLogo);
     }
 
+    // toString => Ver valores en pantalla
     @Override
     public String toString() {
         return "JobPosition{" +
